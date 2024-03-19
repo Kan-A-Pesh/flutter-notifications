@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:notification_front/profile.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class LogingInScreen extends StatelessWidget {
   // Déclarez une variable d'instance pour stocker l'email
   final TextEditingController emailController = TextEditingController();
 
-  LogingInScreen(String s);
+  LogingInScreen(String);
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +37,9 @@ class LogingInScreen extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => Profile(email: enteredEmail,)),
+                      builder: (context) => Profile(
+                            email: enteredEmail,
+                          )),
                 );
               },
               child: Text('Submit'),

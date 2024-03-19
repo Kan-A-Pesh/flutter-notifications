@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:notification_front/logingInScreen.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class Profile extends StatelessWidget {
   final String email; // Déclarez email comme final
