@@ -19,6 +19,8 @@ model User {
     sessions     Session[]
     pushChannels PushChannel[]
     groups       UserGroup[]
+    createdAt    DateTime      @default(now())
+    updatedAt    DateTime      @updatedAt
 }
 
 model Session {
@@ -42,9 +44,9 @@ model PushChannel {
 model Group {
     id        String      @id @default(uuid())
     name      String
+    users     UserGroup[]
     createdAt DateTime    @default(now())
     updatedAt DateTime    @updatedAt
-    users     UserGroup[]
 }
 
 model UserGroup {
